@@ -1,0 +1,19 @@
+[URLS]
+Env: {{ env }}
+Path: {{ path('some_route') }}
+URL: {{ url('some_route') }}
+URL non-proto: {{ url('some_route', [], true) }}
+
+[REQUEST]
+Server address: {{ server.SERVER_NAME }}:{{ server.SERVER_PORT }}
+Host name: {{ hostname }}
+Date: {{ 'now'|date('c') }}
+URI: {{ uri }}
+
+[HEADERS ECHO]
+{{ server.REQUEST_METHOD }} {{ server.REQUEST_URI }} {{ server.SERVER_PROTOCOL }}
+{% for k,v in headers %}
+{% for vv in v %}
+{{ k }}: {{ vv }}
+{% endfor %}
+{% endfor %}
