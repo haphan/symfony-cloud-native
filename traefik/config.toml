@@ -1,0 +1,35 @@
+defaultEntryPoints = ["http", "https"]
+logLevel = "DEBUG"
+
+[accessLog]
+
+[entryPoints]
+  # http should be redirected to https
+  [entryPoints.http]
+  address = ":80"
+    #[entryPoints.http.redirect]
+    #entryPoint = "https"
+  # https is the default
+  [entryPoints.https]
+  address = ":443"
+    [entryPoints.https.tls]
+        [[entryPoints.https.tls.certificates]]
+        certFile = "ssl/hp.uk.eu.org.crt"
+        keyFile = "ssl/hp.uk.eu.org.key"
+
+#[acme]
+#caServer = "https://acme-staging-v02.api.letsencrypt.org/directory"
+# Email address used for registration
+#email = "thanhha.work@gmail.com"
+#storageFile = "/acme.json"
+#entryPoint = "https"
+#OnHostRule = true
+#  [acme.tlsChallenge]
+
+[docker]
+endpoint = "unix:///var/run/docker.sock"
+domain = "docker.localhost"
+watch = true
+exposedByDefault = false
+usebindportip = true
+swarmMode = false
