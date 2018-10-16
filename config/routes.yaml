@@ -1,0 +1,8 @@
+index:
+    path: /{req}
+    controller: App\Controller\DefaultController::index
+    requirements:
+      req: ".+"
+
+some_route:
+  path: /some-path
