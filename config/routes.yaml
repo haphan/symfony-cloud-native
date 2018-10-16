@@ -1,8 +1,13 @@
 index:
-    path: /{req}
-    controller: App\Controller\DefaultController::index
-    requirements:
-      req: ".+"
+  path: /
+  controller: App\Controller\DefaultController::index
+
+index_catch_all:
+  index:
+      path: /{req}
+      controller: App\Controller\DefaultController::index
+      requirements:
+        req: ".+"
 
 some_route:
   path: /some-path
