@@ -5,7 +5,7 @@ URL: {{ url('some_route') }}
 URL non-proto: {{ url('some_route', [], true) }}
 
 [REQUEST]
-Server address: {{ server.SERVER_ADDR }}:{{ server.SERVER_PORT }}
+Server address: {{ server.SERVER_ADDR|default(server.SERVER_NAME) }}:{{ server.SERVER_PORT }}
 Host name: {{ hostname }}
 Date: {{ 'now'|date('c') }}
 URI: {{ uri }}

@@ -2,11 +2,13 @@ index:
   path: /
   controller: App\Controller\DefaultController::index
 
-index_catch_all:
-  path: /{req}
+index_wilcard:
+  path: /{anything}
   controller: App\Controller\DefaultController::index
+  defaults:
+    anything: ~
   requirements:
-    req: ".+"
+    anything: ".+"
 
 some_route:
   path: /some-path
