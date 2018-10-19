@@ -1,3 +1,9 @@
+health_check:
+  path: /healthz
+  controller: Symfony\Bundle\FrameworkBundle\Controller\TemplateController
+  defaults:
+    template: static/health.html.twig
+
 index:
   path: /
   controller: App\Controller\DefaultController::index
