@@ -11,3 +11,9 @@ build:
 
 push:
 	docker push "$(ORG)/$(NAME):latest"
+
+run:
+	docker run -d --name sfcn -p 8000:80 haphan/sfcn:latest
+
+rm:
+	docker rm -f sfcn

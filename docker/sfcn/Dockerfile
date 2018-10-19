@@ -24,4 +24,6 @@ ARG REPO=symfony-cloud-native
 
 COPY --from=builder /tmp/src/${REPO}-${BRANCH}/ /srv/
 
+HEALTHCHECK CMD curl --fail http://localhost:80/healthz || exit 1
+
 ENTRYPOINT [ "/init" ]
