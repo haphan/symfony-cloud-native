@@ -1,1 +1,2 @@
-# symfony-cloud-native
+## Symfony Cloud Native sample application
+
